@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <link rel="stylesheet" href="styles/style.css">
+  {{> base/meta}}
+  {{> base/fonts }}
+  {{> base/analytics }}
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js'></script>
+    {{!-- <script src="https://www.gstatic.com/charts/loader.js"></script> --}}
+    <script src="http://rawgithub.com/desmosinc/scrubber/master/scrubber.js"></script>
+
+</head>
+<body>
+  {{!-- {{> base/headline }} --}}
+
+  <main id='content'>
+
+    {{{body}}}
+
+    {{!-- {{> base/footer }} --}}
+  </main>
+
+  <!-- We'll always keep this JS file around -->
+  {{!-- <script src="scripts/vendor/ai2html-resizer.js"></script> --}}
+
+ 
+</body>
+</html>

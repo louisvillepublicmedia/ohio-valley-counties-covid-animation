@@ -1,0 +1,20 @@
+<div class='covidSimulation'>
+
+    <div id='toggle-layers'>
+        <button class='toggle-layer' id='cases-layer'>Cases</button>
+        <button class='toggle-layer' id='deaths-layer'>Deaths</button>
+    </div>
+    <p class='note' style='text-align:center;'> Play animation to see the map</p>
+    <div  class="timerText" id='scrubber-wrapper'>
+        <button id='play-chart'>Play</button>
+    </div>
+    <div class="timerText"><span id="timerText"></span><span>&nbsp;days since the first reported case</span></div>
+    <div>  
+        <span class='legendImage'><img id='deathsImage' style='visibility: hidden;' src="/images/covidDeaths.png"></span> 
+        <span class='legendImage'><img id='casesImage' style='visibility: visible;' src="/images/covidCases.png"></span>
+    </div>
+    <div class='map-layer' id="ky-covid-simulation"></div>
+    <p class='footer'>Source:  The New York Times</br>
+    Suhail Bhat / Ohio Valley ReSource</p>
+</div>
+<script src="/scripts/kyCovid-simulation.js"></script>
