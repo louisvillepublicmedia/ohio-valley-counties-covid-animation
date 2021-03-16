@@ -1,0 +1,479 @@
+body {
+    margin:auto;
+    /* padding:50px 10px; */
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'ProximaNova-Light', Georgia, serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+.serif{
+    font-family: 'Proxima Nova', serif;
+}
+
+.Georgia{
+    font-family: 'Proxima Nova', Georgia;
+}
+/* choose a light or dark theme to add to the body tag. */
+.dark-theme {
+    background-color: #151515;
+    color: #fbfbfb;
+}
+.light-theme {
+    background-color: white;
+    color: black;
+}
+
+.header {
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+.story-body, .header, .chart-section, .footer {
+    margin:auto;
+    max-width: 640px;
+    font-family: 'ProximaNova-Light', Georgia, serif;
+    /* padding-right: 20px;
+    padding-left: 20px; */
+}
+
+.footer {
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+.chart-section.wide{
+    width:100%;
+    max-width:1200px;
+}
+
+.chart-section.wide p.chart-title {
+    width:100%;
+    max-width:700px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.chart-section.wide p.chart-subhead {
+    width:100%;
+    max-width:700px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+/* text styles */
+
+p.kicker {
+    font-size:1rem;
+    text-transform:uppercase;
+}
+
+.text-center {
+    text-align:center;
+}
+
+h1.headline {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 0.25rem;
+    margin-top: 1rem;
+    font-weight: 800;
+}
+
+h2.subhead {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    margin-bottom:0;
+    margin-top: 15px;
+    font-weight: 400;
+}
+
+p.body-text {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    margin-top:0;
+    margin-bottom:15px;
+    font-family: 'ProximaNova-Light', Georgia, serif;
+  
+  }
+h3.section-head {
+    font-size:2rem;
+    /* margin:0px 0 0px 0; */
+    font-weight:700;
+    margin-top:0;
+    margin-bottom:0;
+    /* line-height:1.3; */
+}
+
+.byline {
+    font-size: 1.1rem;
+    line-height: 0.75;
+    margin-top: 1.5rem;
+    font-weight: 500;
+}
+
+.date {
+    font-size: 0.85rem;
+    line-height: 1;
+    margin-top: 10px;
+    font-weight:400;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+}
+
+
+p.note {
+    font-size:0.85rem;
+}
+
+/* chart styles */
+
+.chart-section {
+    width:100%;
+    max-width:1200px;
+    padding:20px 0px;
+}
+
+.story-body .chart-section {
+    padding-top:0px;
+    padding-bottom:0px;
+
+}
+
+
+.chart-row {
+    display:flex;
+    justify-content: space-between;
+    margin-top:20px;
+}
+
+p.chart-title {
+    font-size:1.3rem;
+    font-weight:700;
+    max-width:700px;
+    margin:0px auto 5px auto;
+}
+p.chart-subhead {
+    margin:0 auto;
+    max-width:700px;
+    font-size:1rem;
+    margin-bottom:15px;
+}
+
+p.chart-label {
+    margin:0;
+    font-size:0.85rem;
+    /* text-align:"right"; */
+    /* position:"absolute"; */
+}
+
+.chart-row .chart {
+    width:100%;
+    padding-right:15px;
+    min-width:calc(25% - 15px);
+
+}
+
+p.chart-source {
+    font-size:0.85rem;
+    margin:0;
+}
+
+
+
+
+/* photos */
+
+.photo-section {
+    padding:30px 0px;
+    width:100%;
+    margin:auto;
+    display:flex;
+    max-width:1200px;
+}
+
+.photo {
+    width:100%;
+    padding-right:15px;
+}
+.photo img {
+    width:100%;	
+}
+
+p.caption {
+    font-size:0.9rem;
+    margin:0;
+}
+
+
+
+/* mobile */
+
+@media (max-width:700px) {
+
+    .chart-row {
+        display:block;
+    }
+
+    .chart-row .chart {
+        padding:0;
+    }
+
+    .photo-section {
+        display:block;
+    }
+
+    .photo {
+        padding:0;
+    }
+
+}
+  
+
+
+#tooltip {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+    font-family: 'ProximaNova-Light', Georgia, serif;
+	background: rgba(255, 255, 255, 0.95);
+	backdrop-filter: blur(10px);
+	border-radius: 0.3rem;
+	color: $offblack;
+	display: block;
+	font-size: 14px;
+	font-weight: 400;
+	padding: 0.2rem 0.4rem;
+	position: absolute;
+	white-space: pre;
+	max-width: 100%;
+	z-index: 300;
+	border: 1.5px solid black;
+	white-space: pre-wrap;
+	div {
+		margin: 0;
+		padding: 0;
+	}
+	.row > * {
+		display: inline-block;
+        text-align: center;
+	}
+	.bold {
+		font-weight: 600;
+	}
+}  
+  /* Create two unequal columns that floats next to each other */
+  .column {
+    float: left;
+    padding:10px;
+
+  }
+  
+  .left {
+    width: 50%;
+  }
+  
+  .right {
+    width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+
+  @media screen and (max-width: 760px) {
+    .column {
+      width: 100%;
+      padding:0px;
+    }
+  }
+/* 
+.map-layer {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    padding: 0 0 60% 0;
+    margin:auto;
+   }
+   @media (min-width: 760px) {
+    .map-layer {
+        padding: 0 0 40% 0;
+        height:40%;
+    }
+  } */
+
+/* Scrubber style */
+.scrubber {
+    width: 250px;
+    height: 20px;
+    position: relative;
+    margin-left:20px;
+}
+
+#scrubber-wrapper {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    max-width:320px;
+    /* background-color: #f1f1f1; */
+}
+
+.scrubber-vert {
+    margin-left: 10px;
+    width: 40px;
+    height: 200px;
+    position: relative;
+}
+
+.scrubber .track {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    width: 100%;
+    height: 8px;
+    background: white;
+    border-radius: 3px;
+    margin-top: -3px;
+}
+
+.scrubber-vert .track {
+    position: absolute;
+    top: 0px;   
+    height: 100%;
+    left: 50%;
+    width: 6px;
+    background: #DDD;
+    border-radius: 3px;
+    margin-left: -3px;
+}
+
+.scrubber .thumb {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    width: 15px;
+    height: 15px;
+    margin-left: -11px;
+    margin-top: -7px;
+    cursor: pointer;
+    opacity: 0.7;
+    border: 8px solid pink;
+    border-radius: 100%;
+    background: blue;
+    transition: border-width 0.2s ease 0s;
+}
+
+.scrubber-vert .thumb {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 22px;
+    height: 22px;
+    margin-top: -11px;
+    margin-left: -11px;
+    cursor: pointer;
+    opacity: 0.7;
+    border: 8px solid #BECFE4;
+    border-radius: 100%;
+    background: #4F81BD;
+    transition: border-width 0.2s ease 0s;
+}
+
+.scrubber .thumb:hover,
+.scrubber-vert .thumb:hover,
+.thumb.dragging {
+  border-width: 0px;
+  opacity: 1;
+}
+
+/* Scrubber style ends */
+
+#play-chart {
+    width: 60px;
+    height: 30px;
+    background-color:white;
+    font-family: 'ProximaNova-Light', Georgia, serif;
+}
+
+
+/* ticks */
+.tick text {
+	font-size: 13px;
+	font-weight: 400;
+	color: #909090;
+}
+.tick line {
+    stroke: lightgray;
+}
+
+/* legend style */
+.legendImage {
+    width:360px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+/* Timer text style */
+
+.timerText {
+    margin-top:10px;
+    margin-bottom:10px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #151515;
+    color: white;
+    padding:20px;
+    max-width:320px;
+    font-size: 18px;
+}
+
+/* toggle layers style */
+
+#toggle-layers {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.toggle-layer {
+        color: white;
+        font-weight: bold;
+        background-color:grey;
+        display: inline-block;
+        max-width:240px;
+        position: flex;
+        padding: 5px 10px 5px 10px;
+        border: 0.5px solid white;
+        text-align: center;
+        border: 1px solid white;
+        text-decoration: none;
+        font-family: 'ProximaNova-Light', Georgia, serif;
+        font-size: 18px;
+    
+        }
+    
+        .toggle-layer:hover {
+            background-color: black;
+            color: white;
+            
+          }
+
+/*# sourceMappingURL=/style.251b6741.css.map */

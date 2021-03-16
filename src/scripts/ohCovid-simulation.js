@@ -1,7 +1,7 @@
 import * as d3 from 'd3'
 import * as topojson from 'topojson'
 import {Scrubber} from 'Scrubber'
-const pymChild = new pym.Child()
+let pymChild
 
 const margin = { top: 0, left: 0, right: 0, bottom: 0 }
 const height = 640 - margin.top - margin.bottom
@@ -11,7 +11,6 @@ const svg = d3
   .select('#covid-simulation')
   .attr('viewBox', [0, 0, width, height])
   .append('svg')
-//   .style('background-color', 'steelblue')
   .attr('height', height + margin.top + margin.bottom)
   .attr('width', width + margin.left + margin.right)
   .append('g')
@@ -74,7 +73,7 @@ const delay = 1
 
 Promise.all([
     d3.json(require("/data/ohioCounties.json")),
-    d3.csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv")
+    d3.csv("https://raw.githubusercontent.com/louisvillepublicmedia/ohio-valley-counties-covid-animation/main/ohio-counties-covid-data.csv")
     ])
     .then(ready)
     .catch(err => console.log('Failed on', err))
@@ -89,6 +88,9 @@ function ready([json, raw]) {
   
   ///json file///
   const counties = topojson.feature(json, json.objects.ohioCounties)
+  counties.features.map(function(d){
+    d.properties.GEOID = +d.properties.GEOID
+  })  
   projection.fitSize([width, height], counties)
 
   const map = svg
@@ -107,7 +109,7 @@ function ready([json, raw]) {
   
   const getFilteredData = () => {
     var filtered = [...raw].filter(d => d.date === dates[index])
-    var totalsMap = new Map(filtered.map(d => [d.fips, d]))
+    var totalsMap = new Map(filtered.map(d => [+d.fips, d]))
     return totalsMap
   }
   function casesMap() {
@@ -196,9 +198,16 @@ function ready([json, raw]) {
    svg
     .selectAll('.county')
     .attr('d', path)
-   
+   //   // send the height to our embed
+   if (pymChild) pymChild.sendHeight()
   }
+
+  // // kick off the graphic and then listen for resize events
   render()
   window.addEventListener('resize', render)
+
+  // // for the embed, don't change!
+  if (pymChild) pymChild.sendHeight()
+  pymChild = new pym.Child({ polling: 200, renderCallback: render })
 
 }
