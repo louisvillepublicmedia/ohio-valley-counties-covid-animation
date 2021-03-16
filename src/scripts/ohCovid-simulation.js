@@ -163,7 +163,7 @@ function ready([json, raw]) {
   let iterateIndex = null
   function timer() {
     if (index <= dates.length-1){
-      index = index + 5
+      index = index + 1
       scrubber.value(index)
       // colorMap()
     } else (clearInterval(iterateIndex))
